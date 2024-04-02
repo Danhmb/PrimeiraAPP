@@ -32,10 +32,20 @@ public class MainActivity extends AppCompatActivity {
 
                 //Ao ser clicado nao permite outro clique
                 v.setEnabled(false);
+
+                //pega o EditText pelo id
                 EditText etDigiteAqui = findViewById(R.id.etDigiteAqui);
+
+                //pega o texto digitado dentro da caixa de texto
                 String textoDigitado = etDigiteAqui.getText().toString();
+
+                //cria uma intenção para navegar até a nova activity
                 Intent i = new Intent(MainActivity.this, NextActivity.class);
+
+                //a intenção manda o texto digitado para a nova activity
                 i.putExtra("Texto", textoDigitado);
+
+                //inicia a nova activity / sobrepõe
                 startActivity(i);
             }
         });
